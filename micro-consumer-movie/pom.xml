@@ -8,26 +8,17 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.my</groupId>
-  <artifactId>micro-provider-user</artifactId>
+  <artifactId>micro-consumer-movie</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>micro-provider-user</name>
+  <name>micro-consumer-movie</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+   <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
