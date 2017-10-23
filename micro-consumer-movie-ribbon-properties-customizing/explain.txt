@@ -1,0 +1,10 @@
+1 ribbon的负载规则配置使用配置文件是十分方便的，只需在application.yml 文件中 要加入
+micro-consumer-movie-ribbon-properties-customizing: 
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    
+注意：1 micro-consumer-movie-ribbon-properties-customizing 是 spring:
+  application:
+    name的值
+    2 NFLoadBalancerRuleClassName 中指定那种规则的实现类，com.netflix.loadbalancer.RoundRobinRule
+    是随机方式

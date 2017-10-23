@@ -45,6 +45,9 @@
     <module>spring-cloud-eureka-service</module>
     <module>micro-provider-user</module>
     <module>micro-consumer-movie</module>
+	<module>micro-consumer-movie-ribbon</module>
+	<module>micro-consumer-movie-ribbon-properties-customizing</module>
+	
   </modules>
   <build>
 		<plugins>
