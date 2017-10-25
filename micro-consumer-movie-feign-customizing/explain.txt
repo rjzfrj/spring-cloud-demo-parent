@@ -1,0 +1,21 @@
+Feign 覆盖本身默认配置的使用demo
+ 1 由于feign本身的默认配置使用了的是springmvc的注解。如果覆盖本身的默认配置springmvc注解将不能使用了
+ 2 具体使用方法
+    /**
+	 * 由于使用了 configuration =Configuration1.class  在Configuration1 中使用了feign的本身的配置
+	 * 这样在UserFeignClient2 中不在可以使用springvmc的注解必须使用feign的注解如下所示
+	 *
+	 */
+	@FeignClient(name = "microservice-provider-user",configuration=Configuration1.class)
+	public interface UserFeignClient2 {
+		  @RequestLine("GET /simple/{id}")
+		  public User findById(@Param("id") Long id);
+	}
+    
+说明 ： @FeignClient(name = "microservice-provider-user",configuration=Configuration1.class)
+中的configuration 属性指定了具体的配置
+     name属性指定了的application:name 一旦被使用，其他FeignClient不能再使用了在使用就会被认为是经过覆盖配置的，因为
+     这个标签生成的FeignClient是使用这个名字实例化的，覆盖了默认配置的对象，这样再使用当然是不行的还是这个对象。
+     
+     通过实例demo表明使用Configuration覆盖默认配置不影响其他FeignClient 需要把 Configuration1的配置类放到启动类外的
+  包中，包中不被启动类及包下的扫描到就行了

@@ -47,6 +47,9 @@
     <module>micro-consumer-movie</module>
 	<module>micro-consumer-movie-ribbon</module>
 	<module>micro-consumer-movie-ribbon-properties-customizing</module>
+	<module>micro-consumer-movie-feign</module>
+	<module>micro-consumer-movie-feign-customizing</module>
+	<module>spring-cloud-eureka-service-high</module>
 	
   </modules>
   <build>
