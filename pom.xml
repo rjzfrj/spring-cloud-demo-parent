@@ -50,6 +50,7 @@
 	<module>micro-consumer-movie-feign</module>
 	<module>micro-consumer-movie-feign-customizing</module>
 	<module>spring-cloud-eureka-service-high</module>
+	<module>micro-consumer-movie-ribbon-hystrix</module>
 	
   </modules>
   <build>

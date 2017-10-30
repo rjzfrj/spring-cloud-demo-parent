@@ -1,0 +1,27 @@
+1. hystrix 短路器 引入依赖
+
+    <dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-hystrix</artifactId>
+	</dependency>
+2. 添加application.yml 文件中 如果要配置超时时间如下
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+3. 启动类添加注解 @EnableCircuitBreaker  如下
+
+@SpringBootApplication
+@EnableEurekaClient
+@EnableCircuitBreaker
+public class ConsumerMovieRibbonHystrixApplication 
+{
+	@Bean
+	@LoadBalanced   //使用ribbon 十分简单1 加依赖 spring-cloud-starter-ribbon，2在ribbon需要加这个注解
+	public RestTemplate restTemplate() {
+			return new RestTemplate();
+	}
+    public static void main( String[] args )
+    {
+    	SpringApplication.run(ConsumerMovieRibbonHystrixApplication.class, args);
+    }
+} 
+
+4.
